@@ -1,3 +1,8 @@
+<!-- 12. Объявить основной класс с именем Point, с следующими данными: координаты точки: х, у;
+конструктор; деструктор; функция ввода данных; и второстепенный класс Graphicpoint.
+В этом классе добавляются новые данные: с – цвет точки; функция которая при вводе
+числовых значений другой точки возвращает длину отрезка. -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,44 +25,16 @@
 
 <?php 
 
-class Point {
-    public $x;
-    public $y;
-    
-    public function __construct($x = 0, $y = 0){
-        $this->x = $x;
-        $this->y = $y;
-    }
-
-    public function __destruct(){}
-
-    public function __toString(){
-        return "({$this->x}, {$this->y})";
-    }
-    
-    public function input(){
-        $x = readline("Введите значение координаты х: ");
-        $y = readline("Введите значение координаты y: ");
-
-        echo "Координаты x, y: ".$this->x.", ".$this->y."<br>";
-    }
-};
-
-class Graphicpoint extends Point {
-    public $c;
-
-    public function lenght($x, $y){
-        echo "Длина отрезка = ".($y - $x);
-    }
-};
+require "Graphicpoint.php";
 
 $x = $_GET['x'];
 $y = $_GET['y'];
 $a = $_GET['a'];
 $b = $_GET['b'];
-$mypoint = new Point($x, $y);
-$mypoint->input();
 
-$two = new Graphicpoint();
-$two->lenght($a, $b);
-?>
+$onePpoint = new Point($x, $y);
+$onePpoint->input();
+
+$twoPoint = new Graphicpoint();
+$twoPoint->lenght($a, $b);
+
