@@ -10,6 +10,6 @@ class Graphicpoint extends Point {
     }
 
     public function lenght($x, $y){
-        echo "Длина отрезка = ".($y - $x);
+        echo "Длина отрезка($x, $y) = ".($y - $x);
     }
 };
